@@ -33,7 +33,7 @@ Changes are documented in the [Changelog](CHANGELOG.md).
 
 ## Authors
 
-`runit` - cross-platform Unix init scheme with service supervision by [Gerrit Pape](mailto:pape@smarden.org)
+`runit` - cross-platform Unix init scheme with service supervision by [Gerrit Pape](mailto:pape@smarden.org).
 
 See [the list of contributors](https://github.com/owenthewizard/runit/contributors).
 
