@@ -1,0 +1,1 @@
+gcc -O2 -Wl,--hash-style=gnu -Wl,-z,now -Wl,-z,relro -s -static -static-pie

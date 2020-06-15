@@ -1,0 +1,5 @@
+#!/bin/sh
+
+printf '- runit: %s\n' "Sending SIGTERM to all processes... (5s)"
+killall5 -SIGTERM
+sleep 5

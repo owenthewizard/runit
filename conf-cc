@@ -1,0 +1,1 @@
+gcc -DFORTIFY_SOURCE=2 -Ofast -fPIE -fomit-frame-pointer -fstack-protector-strong -pipe -static

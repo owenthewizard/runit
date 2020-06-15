@@ -1,0 +1,66 @@
+diff -ur src/Makefile src.new/Makefile
+--- src/Makefile	2014-08-10 13:22:35.000000000 -0500
++++ src.new/Makefile	2019-05-12 18:04:00.235752975 -0500
+@@ -320,9 +320,6 @@
+ sig_catch.o: compile hassgact.h sig.h sig_catch.c
+ 	./compile sig_catch.c
+ 
+-sig_pause.o: compile hassgprm.h sig.h sig_pause.c
+-	./compile sig_pause.c
+-
+ str_chr.o: compile str.h str_chr.c
+ 	./compile str_chr.c
+ 
+@@ -445,7 +442,7 @@
+ makelib ndelay_off.o ndelay_on.o open_append.o open_read.o \
+ open_trunc.o open_write.o openreadclose.o pathexec_env.o \
+ pathexec_run.o prot.o readclose.o seek_set.o sgetopt.o sig.o \
+-sig_block.o sig_catch.o sig_pause.o stralloc_cat.o stralloc_catb.o \
++sig_block.o sig_catch.o stralloc_cat.o stralloc_catb.o \
+ stralloc_cats.o stralloc_eady.o stralloc_opyb.o stralloc_opys.o \
+ stralloc_pend.o strerr_die.o strerr_sys.o subgetopt.o wait_nohang.o \
+ wait_pid.o
+@@ -455,7 +452,7 @@
+ 	lock_exnb.o ndelay_off.o ndelay_on.o open_append.o open_read.o \
+ 	open_trunc.o open_write.o openreadclose.o pathexec_env.o \
+ 	pathexec_run.o prot.o readclose.o seek_set.o sgetopt.o sig.o \
+-	sig_block.o sig_catch.o sig_pause.o stralloc_cat.o stralloc_catb.o \
++	sig_block.o sig_catch.o stralloc_cat.o stralloc_catb.o \
+ 	stralloc_cats.o stralloc_eady.o stralloc_opyb.o stralloc_opys.o \
+ 	stralloc_pend.o strerr_die.o strerr_sys.o subgetopt.o wait_nohang.o \
+ 	wait_pid.o
+diff -ur src/runit.c src.new/runit.c
+--- src/runit.c	2014-08-10 13:22:35.000000000 -0500
++++ src.new/runit.c	2019-05-12 18:02:56.395074520 -0500
+@@ -339,7 +339,6 @@
+   }
+ #endif
+ 
+-  for (;;) sig_pause();
+   /* not reached */
+   strerr_die2x(0, INFO, "exit.");
+   return(0);
+diff -ur src/sig.h src.new/sig.h
+--- src/sig.h	2014-08-10 13:22:35.000000000 -0500
++++ src.new/sig.h	2019-05-12 18:03:34.892150781 -0500
+@@ -21,7 +21,6 @@
+ extern void sig_block(int);
+ extern void sig_unblock(int);
+ extern void sig_blocknone(void);
+-extern void sig_pause(void);
+ 
+ extern void sig_dfl(int);
+ 
+Only in src: sig_pause.c
+diff -ur src/TARGETS src.new/TARGETS
+--- src/TARGETS	2014-08-10 13:22:34.000000000 -0500
++++ src.new/TARGETS	2019-05-12 18:04:23.402664911 -0500
+@@ -94,7 +94,6 @@
+ sig.o
+ sig_block.o
+ sig_catch.o
+-sig_pause.o
+ str_chr.o
+ str_diff.o
+ str_len.o
+
