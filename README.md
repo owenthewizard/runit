@@ -7,7 +7,7 @@ Patched to terminate correctly in Docker.
 ## Quick Start
 
 ```Dockerfile
-FROM owenthewizard/runit:2.12_alpine
+FROM owenthewizard/runit:2.12-r1_alpine
 
 RUN apk --no-cache add example_daemon
 
